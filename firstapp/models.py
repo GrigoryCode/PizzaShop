@@ -15,6 +15,8 @@ class Pizza(models.Model):
     name = models.CharField(max_length=30, verbose_name='Pizza Title')
     description = models.TextField(verbose_name='Description')
     price = models.FloatField(default=0, verbose_name='Price')
+    image = models.ImageField('Image', upload_to='firstapp/photos', default='', blank=True)
+
 
     class Meta:
         ordering = ['name']
