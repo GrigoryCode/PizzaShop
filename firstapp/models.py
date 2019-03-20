@@ -13,11 +13,11 @@ class PizzaShop(models.Model):
 class Pizza(models.Model):
     pizzashop = models.ForeignKey(PizzaShop, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, verbose_name='Pizza Title')
-    description = models.CharField(max_length=50, verbose_name='Short Description')
-    price = models.IntegerField(default=0, verbose_name='Price')
+    description = models.TextField(verbose_name='Description')
+    price = models.FloatField(default=0, verbose_name='Price')
 
     class Meta:
         ordering = ['name']
-    
+
     def __str__(self):
         return self.name
