@@ -15,7 +15,11 @@
         <div>{{ pizza.price|floatformat:"2" }}</div>
       </div>
       <h2>Order</h2>
+      {% if sent %}
+        <h4>Thanks for your order!</h4>
+      {% endif %}
       <form method="POST">
+        {% csrf_token %}
         {{ form.as_ul }}
         <input type="submit" value="Send Order">
       </form>
