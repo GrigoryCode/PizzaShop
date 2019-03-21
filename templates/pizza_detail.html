@@ -14,4 +14,9 @@
         <div>{{ pizza.description }}</div>
         <div>{{ pizza.price|floatformat:"2" }}</div>
       </div>
+      <h2>Order</h2>
+      <form method="POST">
+        {{ form.as_ul }}
+        <input type="submit" value="Send Order">
+      </form>
   {% endblock %}

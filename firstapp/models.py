@@ -23,3 +23,9 @@ class Pizza(models.Model):
 
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE, verbose_name='Pizza')
+    name = models.CharField(max_length=30, verbose_name='Name')
+    phone = models.CharField(max_length=30, verbose_name='Phone Number')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
